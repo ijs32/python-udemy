@@ -22,3 +22,5 @@ for i in range(11):
     investment += (investment * (interest * 0.01))
 print("Your invested amount after 10 years equals {:.2f}".format(investment))
 '''
+# for i in range(1, 21):
+#     print(i)
