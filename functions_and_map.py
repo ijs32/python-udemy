@@ -13,6 +13,9 @@
 
 # print(list(map(add_two, original_list)))
 
+from typing import final
+
+
 words = ["hello", "world", "goodbye", "no", "ok"]
 
 
@@ -62,3 +65,56 @@ def shorter_than_four(word):
 
 
 print(list(map(shorter_than_four, words)))
+
+
+def change_name():
+    global gbl_name
+    gbl_name = 'Sammy'
+
+
+# use global variables if you want to affect something outside a function
+gbl_name = "Charles"
+change_name()
+print(gbl_name)
+
+
+def get_sum(num_1, num_2):
+    return num_1 + num_2   # values must be returned
+
+
+print(get_sum(5, 4))
+
+
+def is_float(string):
+    try:
+        float(string)
+        return True
+    except ValueError:
+        return False
+
+
+pi = "3.14"
+print("is pi a float : ", is_float(pi))
+
+
+# def solve_eq(string):
+#     eq = string.split()
+#     numbers = []
+#     for i in eq:
+#         try:
+#             int(i)
+#             numbers.append(int(i))   # my less pro answer
+#         except:
+#             continue
+#     return("x = {}".format(numbers[-1] - numbers[0]))
+
+
+# print(solve_eq("x + 4 = 9"))
+
+def solve_eq(string):
+    x, operator, num_1, equal, num_2 = string.split()
+    num_1, num_2 = int(num_1), int(num_2)     # much better solution
+    return("x = {}".format(num_2 - num_1))
+
+
+print(solve_eq("x + 4 = 9"))
