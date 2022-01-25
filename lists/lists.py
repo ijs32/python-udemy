@@ -1,7 +1,4 @@
 import random
-
-
-import random
 # notes
 rand_list = ["string", 4.0, 24]
 one_to_ten = list(range(11))
